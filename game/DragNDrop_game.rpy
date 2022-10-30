@@ -51,7 +51,7 @@ screen drag_sample2:
     draggroup:
         drag:
             drag_name "circle"
-            child "circle.png"
+            child "/images/DragNDrop/circle.png"
             xpos 100
             ypos 100
             draggable True
@@ -60,7 +60,7 @@ screen drag_sample2:
             drag_raise True
         drag:
             drag_name "triangle"
-            child "triangle.png"
+            child "/images/DragNDrop/triangle.png"
             xpos 400
             ypos 100
             draggable True
@@ -69,7 +69,7 @@ screen drag_sample2:
             drag_raise True
         drag:
             drag_name "square"
-            child "square.png"
+            child "/images/DragNDrop/square.png"
             xpos 700
             ypos 100
             draggable True
@@ -80,14 +80,14 @@ screen drag_sample2:
             drag_name "The Left Circle"
             xpos 0.1
             ypos 0.6
-            child "spot.png"
+            child "/images/DragNDrop/spot.png"
             draggable False
             droppable True
         drag:
             drag_name "The Right Circle"
             xpos 0.6
             ypos 0.6
-            child "spot.png"
+            child "/images/DragNDrop/spot.png"
             draggable False
             droppable True
 
@@ -98,13 +98,13 @@ screen drag_sample3:
             drag_name "The Left Circle"
             xpos 0.1
             ypos 0.6
-            child "spot.png"
+            child "/images/DragNDrop/spot.png"
             draggable False
             droppable False
         drag:
             drag_name "The Right Circle"
             xpos 0.6
             ypos 0.6
-            child "spot.png"
+            child "/images/DragNDrop/spot.png"
             draggable False
             droppable False

@@ -1,31 +1,31 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While loading <renpy.display.im.Image object ('/images/rock_idle.png') at 0x0000000005c2b820>:
-  File "game/RPS_game.rpy", line 95, in script
-    scene ai
-  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
-    _window_hide(auto=True)
-  File "renpy/common/000window.rpy", line 101, in _window_hide
-    renpy.with_statement(trans)
-OSError: Couldn't find file 'images/rock_idle.png'.
+While loading <renpy.display.im.Image object ('buttonoff.png') at 0x0000000005b02910>:
+  File "game/memory_game.rpy", line 116, in script call
+    call simongame pass (difficulty=1,endgame=5,goquick=5)
+  File "game/memory_game.rpy", line 20, in script
+    $ renpy.pause(0.5,hard=True)
+  File "game/memory_game.rpy", line 20, in <module>
+    $ renpy.pause(0.5,hard=True)
+OSError: Couldn't find file 'buttonoff.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/RPS_game.rpy", line 95, in script
-    scene ai
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1537, in execute
-    statement_name("scene")
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 47, in statement_name
-    i(name)
-  File "renpy/common/000window.rpy", line 111, in _window_auto_callback
-    _window_hide(auto=True)
-  File "renpy/common/000window.rpy", line 101, in _window_hide
-    renpy.with_statement(trans)
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\exports.py", line 1657, in with_statement
-    return renpy.game.interface.do_with(trans, paired, clear=clear)
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 2798, in do_with
-    return self.interact(trans_pause=True,
+  File "game/memory_game.rpy", line 116, in script call
+    call simongame pass (difficulty=1,endgame=5,goquick=5)
+  File "game/memory_game.rpy", line 20, in script
+    $ renpy.pause(0.5,hard=True)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
+    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
+    exec(bytecode, globals, locals)
+  File "game/memory_game.rpy", line 20, in <module>
+    $ renpy.pause(0.5,hard=True)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\exports.py", line 1537, in pause
+    rv = renpy.ui.interact(mouse='pause', type='pause', roll_forward=roll_forward, pause=delay, pause_modal=modal)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
   File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 3912, in interact_core
@@ -36,10 +36,6 @@ Full traceback:
   File "render.pyx", line 266, in renpy.display.render.render
   File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
     surf = render(child, width, height, cst, cat)
-  File "render.pyx", line 170, in renpy.display.render.render
-  File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\transition.py", line 377, in render
-    bottom = render(self.old_widget, width, height, st, at)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 266, in renpy.display.render.render
   File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
@@ -58,9 +54,11 @@ Full traceback:
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\transform.py", line 747, in render
-    return transform_render(self, width, height, st, at)
-  File "accelerator.pyx", line 187, in renpy.display.accelerator.transform_render
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 497, in render
+    renders = [ render(i, renwidth, renheight, st, at) for i in children ]
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 497, in <listcomp>
+    renders = [ render(i, renwidth, renheight, st, at) for i in children ]
+  File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 266, in renpy.display.render.render
   File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\im.py", line 627, in render
     return cache.get(self, render=True)
@@ -72,9 +70,9 @@ Full traceback:
     filelike = renpy.loader.load(self.filename)
   File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\loader.py", line 820, in load
     raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'images/rock_idle.png'.
+OSError: Couldn't find file 'buttonoff.png'.
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 SaveGameIndustry 1.0
-Sun Oct 30 15:14:21 2022
+Sun Oct 30 16:46:10 2022

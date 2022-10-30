@@ -28,7 +28,7 @@ label showthesequence: #теперь показывают на экране, к�
 label theguessin:#этот ярлык подготовить экран, скрывая то, что осталось от предыдущих
     $ nowpush=0
     hide screen displaysequence
-  #Теперь вызовем на экране ввода данных
+    #Теперь вызовем на экране ввода данных
     $ nowpush=0
 label guessthesequence: #сейчас ввод команд игрока, чтобы повторить последовательность
     if nowpush==len(sequence):
@@ -60,30 +60,30 @@ screen displaysequence:
         yalign 0.5
         spacing 5
         if sequence[nowpush]==0:
-            add "redon.png"
+            add "images/Memory/redon.png"
         else:
-            add "buttonoff.png"
+            add "images/Memory/buttonoff.png"
         if sequence[nowpush]==1:
-            add "blueon.png"
+            add "images/Memory/blueon.png"
         else:
-            add "buttonoff.png"
+            add "images/Memory/buttonoff.png"
         if sequence[nowpush]==2:
-            add "greenon.png"
+            add "images/Memory/greenon.png"
         else:
-            add "buttonoff.png"
+            add "images/Memory/buttonoff.png"
         if sequence[nowpush]==3:
-            add "yellowon.png"
+            add "images/Memory/yellowon.png"
         else:
-            add "buttonoff.png"
+            add "images/Memory/buttonoff.png"
 screen voidgame:
     grid 2 2:
         xalign 0.5
         yalign 0.5
         spacing 5
-        add "buttonoff.png"
-        add "buttonoff.png"
-        add "buttonoff.png"
-        add "buttonoff.png"
+        add "images/Memory/buttonoff.png"
+        add "images/Memory/buttonoff.png"
+        add "images/Memory/buttonoff.png"
+        add "images/Memory/buttonoff.png"
    
 screen inputcolor:
     use racetheclock(goquick) #this is a moving bar, so techie!
@@ -92,10 +92,10 @@ screen inputcolor:
         xalign 0.5
         yalign 0.5
         spacing 5
-        imagebutton idle "buttonoff.png" hover "redon.png" action Return(0)
-        imagebutton idle "buttonoff.png" hover "blueon.png" action Return(1)
-        imagebutton idle "buttonoff.png" hover "greenon.png" action Return(2)
-        imagebutton idle "buttonoff.png" hover "yellowon.png" action Return(3)
+        imagebutton idle "images/Memory/buttonoff.png" hover "images/Memory/redon.png" action Return(0)
+        imagebutton idle "images/Memory/buttonoff.png" hover "images/Memory/blueon.png" action Return(1)
+        imagebutton idle "images/Memory/buttonoff.png" hover "images/Memory/greenon.png" action Return(2)
+        imagebutton idle "images/Memory/buttonoff.png" hover "images/Memory/yellowon.png" action Return(3)
        
 
 screen racetheclock(goquick):
