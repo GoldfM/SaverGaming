@@ -14,7 +14,7 @@ label start:
     scene bg room
 
     menu:
-        "Во что поиграем?"
+        "Во будем поиграем?"
         "Memory":
             $ curtry = 0
             jump memory_game
