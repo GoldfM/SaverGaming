@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 19: invalid syntax
-    Movie(play="wait.mp4",size=(1280, 720) pos=(0,0), anchor=(0, 0))
-                                            ^
+File "game/script.rpy", line 102: end of line expected.
+    scene institut with dissolve time 2
+                                 ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Oct 31 18:29:39 2022
+Mon Oct 31 22:11:33 2022
