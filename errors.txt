@@ -1,0 +1,10 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/script.rpy", line 19: invalid syntax
+    Movie(play="wait.mp4",size=(1280, 720) pos=(0,0), anchor=(0, 0))
+                                            ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Mon Oct 31 18:29:39 2022
