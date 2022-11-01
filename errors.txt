@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 102: end of line expected.
-    scene institut with dissolve time 2
-                                 ^
+File "game/script.rpy", line 149: Only one say menuitem may exist per menu.
+    gg "Повезло нам с руководителем"
+                                    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Oct 31 22:11:33 2022
+Wed Nov  2 01:15:32 2022
