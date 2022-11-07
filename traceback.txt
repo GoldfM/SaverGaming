@@ -1,22 +1,32 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 48, in script
-    jump phone
-ScriptError: could not find label 'phone'.
+  File "game/script.rpy", line 143, in script
+    "Какой ты циничный, аж противно! В "Phoenix" все работают за идею."
+  File "renpy/common/00library.rpy", line 303, in say
+    who(what, interact=interact, *args, **kwargs)
+Exception: Say has image attributes ('Phoenix',), but there's no image tag associated with the speaking character.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 48, in script
-    jump phone
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1974, in execute
-    rv = renpy.game.script.lookup(target)
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\script.py", line 927, in lookup
-    raise ScriptError("could not find label '%s'." % str(original))
-ScriptError: could not find label 'phone'.
+  File "game/script.rpy", line 143, in script
+    "Какой ты циничный, аж противно! В "Phoenix" все работают за идею."
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\exports.py", line 1371, in say
+    renpy.store.say(who, what, *args, **kwargs)
+  File "renpy/common/00library.rpy", line 303, in say
+    who(what, interact=interact, *args, **kwargs)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 1206, in __call__
+    old_attr_state = self.handle_say_attributes(False, interact)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 1030, in handle_say_attributes
+    if self.resolve_say_attributes(predicting, attrs):
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 956, in resolve_say_attributes
+    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
+Exception: Say has image attributes ('Phoenix',), but there's no image tag associated with the speaking character.
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 SaveGameIndustry 1.0
-Mon Oct 31 21:05:35 2022
+Mon Nov  7 17:14:29 2022
