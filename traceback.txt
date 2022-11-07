@@ -1,32 +1,70 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/script.rpy", line 143, in script
-    "Какой ты циничный, аж противно! В "Phoenix" все работают за идею."
-  File "renpy/common/00library.rpy", line 303, in say
-    who(what, interact=interact, *args, **kwargs)
-Exception: Say has image attributes ('Phoenix',), but there's no image tag associated with the speaking character.
+While loading <renpy.display.im.Image object ('images/time_machine.png') at 0x0000000004ea1370>:
+  File "game/script.rpy", line 135, in script
+    alisa "Впечатляет, не правда ли? Ума не приложу, как Паша выпросил разрешение на ее использование у университета. Наши ученые не любят отправлять в прошлое абы-кого."
+OSError: Couldn't find file 'images/time_machine.png'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 143, in script
-    "Какой ты циничный, аж противно! В "Phoenix" все работают за идею."
+  File "game/script.rpy", line 135, in script
+    alisa "Впечатляет, не правда ли? Ума не приложу, как Паша выпросил разрешение на ее использование у университета. Наши ученые не любят отправлять в прошлое абы-кого."
   File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
     renpy.exports.say(who, what, *args, **kwargs)
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\exports.py", line 1371, in say
-    renpy.store.say(who, what, *args, **kwargs)
-  File "renpy/common/00library.rpy", line 303, in say
-    who(what, interact=interact, *args, **kwargs)
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 1206, in __call__
-    old_attr_state = self.handle_say_attributes(False, interact)
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 1030, in handle_say_attributes
-    if self.resolve_say_attributes(predicting, attrs):
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 956, in resolve_say_attributes
-    raise Exception("Say has image attributes %r, but there's no image tag associated with the speaking character." % (attrs,))
-Exception: Say has image attributes ('Phoenix',), but there's no image tag associated with the speaking character.
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 1266, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 927, in do_display
+    display_say(who,
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\character.py", line 666, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 3912, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 2602, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 495, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\transform.py", line 747, in render
+    return transform_render(self, width, height, st, at)
+  File "accelerator.pyx", line 187, in renpy.display.accelerator.transform_render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\image.py", line 506, in render
+    return wrap_render(self.target, width, height, st, at)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\image.py", line 309, in wrap_render
+    rend = render(child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\im.py", line 627, in render
+    return cache.get(self, render=True)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\im.py", line 295, in get
+    surf = image.load()
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\im.py", line 720, in load
+    raise e
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\im.py", line 685, in load
+    filelike = renpy.loader.load(self.filename)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\loader.py", line 820, in load
+    raise IOError("Couldn't find file '%s'." % name)
+OSError: Couldn't find file 'images/time_machine.png'.
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 SaveGameIndustry 1.0
-Mon Nov  7 17:14:29 2022
+Tue Nov  8 00:58:00 2022
