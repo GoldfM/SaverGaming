@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 139: Only one say menuitem may exist per menu.
-    alisa "Каждая из них надеется получить большую прибыль от наших будущих игр. А ведь это когда-то и погубило индустрию..."
-                                                                                                                             ^
+File "game/script.rpy", line 134: expected statement.
+    aplodisment
+               ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Nov  7 17:12:56 2022
+Wed Nov  9 14:35:31 2022
