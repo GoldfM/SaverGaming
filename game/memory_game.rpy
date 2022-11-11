@@ -113,7 +113,7 @@ label too_slow:
 # Игра начинается здесь.
 label memory_game:
     "Повторите теже самые кнопки что мигают"
-    call simongame pass (difficulty=1,endgame=5,goquick=5)
+    call simongame pass (difficulty=1,endgame=5,goquick=5) from _call_simongame
     "ну вот и все"
 
     jump start

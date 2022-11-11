@@ -24,6 +24,7 @@ init python:
     onn = ImageDissolve("eye.png", 0.9, 20, reverse=False) 
     off = ImageDissolve("eye.png", 0.7, 10, reverse=True) 
 label start:
+    play music "music/fiesta.mp3"
     image animated = Movie(play="wait.ogv", pos=(0,0), anchor=(0, 0))
     scene animated
     with Pause(1)
@@ -47,9 +48,9 @@ label morning:
     menu:
         "Вы чувствуете себя очень усталым, и готовы пожертвовать всем ради нескольких часов сна"
         "Спать дальше":
-            call sleep
+            call sleep from _call_sleep
         "Встать, вопреки всему":
-            call wake_up
+            call wake_up from _call_wake_up
     
     jump phone
     return
