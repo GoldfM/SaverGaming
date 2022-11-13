@@ -23,6 +23,7 @@ style hyperlink_text:
 
 style gui_text:
     properties gui.text_properties("interface")
+    color gui.accent_color
 
 
 style button:
@@ -92,7 +93,6 @@ style frame:
 ## текст. Здесь также можно создать наложения с id "who" и id "window", чтобы
 ## применить к ним настройки стиля.
 ##
-## https://www.renpy.org/doc/html/screen_special.html#say
 
 screen say(who, what):
     style_prefix "say"
@@ -114,7 +114,7 @@ screen say(who, what):
     ## По стандарту не показывается на варианте для мобильных устройств — мало
     ## места.
     if not renpy.variant("small"):
-        add SideImage() xalign 0.0 yalign 1.0
+        add SideImage() xalign 0.048 yalign 0.9422
 
 
 ## Делает namebox доступным для стилизации через объект Character.
@@ -131,7 +131,7 @@ style namebox_label is say_label
 
 
 style window:
-    xalign 0.5
+    xalign 0.0
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
@@ -169,8 +169,6 @@ style say_dialogue:
 ##
 ## Этот экран должен создать наложение ввода с id "input", чтобы принять
 ## различные вводимые параметры.
-##
-## https://www.renpy.org/doc/html/screen_special.html#input
 
 screen input(prompt):
     style_prefix "input"
@@ -238,7 +236,6 @@ style choice_button_text is default:
 
 screen quick_menu():
 
-    ## Гарантирует, что оно появляется поверх других экранов.
     zorder 100
 
     if quick_menu:
@@ -290,8 +287,8 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        xalign 0.22
+        yalign 0.69
 
         spacing gui.navigation_spacing
 
@@ -349,31 +346,17 @@ style navigation_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 
 screen main_menu():
-
-    ## Этот тег гарантирует, что любой другой экран с тем же тегом будет
-    ## заменять этот.
     tag menu
 
-    add gui.main_menu_background
-
-    ## Эта пустая рамка затеняет главное меню.
-    frame:
-        style "main_menu_frame"
+    imagemap:
+        ground "gui/main_menu.png"
+        idle "gui/menu_normal.png"
+        hover "gui/menu_hover.png"
 
     ## Оператор use включает отображение другого экрана в данном. Актуальное
     ## содержание главного меню находится на экране навигации.
     use navigation
 
-    if gui.show_name:
-
-        vbox:
-            style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
-
-            text "[config.version]":
-                style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -401,8 +384,6 @@ style main_menu_text:
 style main_menu_title:
     properties gui.text_properties("title")
 
-style main_menu_version:
-    properties gui.text_properties("version")
 
 
 ## Экран игрового меню #########################################################
@@ -553,13 +534,8 @@ screen about():
         vbox:
 
             label "[config.name!t]"
-            text _("Версия [config.version!t]\n")
-
-            ## gui.about обычно установлено в options.rpy.
             if gui.about:
                 text "[gui.about!t]\n"
-
-            text _("Сделано с помощью {a=https://www.renpy.org/}Ren'Py{/a} [renpy.version_only].\n\n[renpy.license!t]")
 
 
 style about_label is gui_label
@@ -575,8 +551,6 @@ style about_label_text:
 ## Эти экраны ответственны за возможность сохранять и загружать игру. Так
 ## как они почти одинаковые, оба реализованы по правилам третьего экрана —
 ## file_slots.
-##
-## https://www.renpy.org/doc/html/screen_special.html#save
 
 screen save():
 
@@ -895,8 +869,7 @@ screen history():
 
                         ## Берёт цвет из who параметра персонажа, если он
                         ## установлен.
-                        if "color" in h.who_args:
-                            text_color h.who_args["color"]
+                        text_color "#14000b"
 
                 $ what = renpy.filter_text_tags(h.what, allow=gui.history_allow_tags)
                 text what:

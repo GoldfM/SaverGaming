@@ -23,17 +23,17 @@ init python:
 ## Цвета текста в интерфейсе.
 
 ## Акцентный цвет используется в заголовках и подчёркнутых текстах.
-define gui.accent_color = '#cc6600'
+define gui.accent_color = '#ff9915'
 
 ## Цвет, используемый в текстовой кнопке, когда она не выбрана и не наведена.
-define gui.idle_color = '#888888'
+define gui.idle_color = '#ffffff'
 
 ## Small_color используется в маленьком тексте, который должен быть ярче/темнее,
 ## для того, чтобы выделяться.
-define gui.idle_small_color = '#aaaaaa'
+define gui.idle_small_color = '#ffffff'
 
 ## Цвет, используемых в кнопках и панелях, когда они наведены.
-define gui.hover_color = '#e0a366'
+define gui.hover_color = '#ff9915'
 
 ## Цвет, используемый текстовой кнопкой, когда она выбрана, но не наведена.
 ## Кнопка может быть выбрана, если это текущий экран или текущее значение
@@ -41,28 +41,31 @@ define gui.hover_color = '#e0a366'
 define gui.selected_color = '#ffffff'
 
 ## Цвет, используемый текстовой кнопкой, когда она не может быть выбрана.
-define gui.insensitive_color = '#8888887f'
+define gui.insensitive_color = '#ffffff7f'
 
 ## Цвета, используемые для частей панелей, которые не заполняются. Они
 ## используются не напрямую, а только при воссоздании файлов изображений.
-define gui.muted_color = '#512800'
-define gui.hover_muted_color = '#7a3d00'
+define gui.muted_color = '#510000'
+define gui.hover_muted_color = '#7a0000'
 
 ## Цвета, используемые в тексте диалогов и выборов.
-define gui.text_color = '#ffffff'
-define gui.interface_text_color = '#ffffff'
+define gui.text_color = '#ff9915'
+define gui.interface_text_color = '#ff9915'
 
 
 ## Шрифты и их размеры #########################################################
 
+## Шрифт, используемый заголовком игры.
+define gui.title_font = "Ubuntu-Bold.ttf"
+
 ## Шрифт, используемый внутриигровым текстом.
-define gui.text_font = "DejaVuSans.ttf"
+define gui.text_font = "Ubuntu-Regular.ttf"
 
 ## Шрифт, используемый именами персонажей.
-define gui.name_text_font = "DejaVuSans.ttf"
+define gui.name_text_font = "Ubuntu-Medium.ttf"
 
 ## Шрифт, используемый текстом вне игры.
-define gui.interface_text_font = "DejaVuSans.ttf"
+define gui.interface_text_font = "Ubuntu-Medium.ttf"
 
 ## Размер нормального текста диалога.
 define gui.text_size = 22
@@ -71,7 +74,7 @@ define gui.text_size = 22
 define gui.name_text_size = 30
 
 ## Размер текста в пользовательском интерфейсе.
-define gui.interface_text_size = 22
+define gui.interface_text_size = 28
 
 ## Размер заголовков в пользовательском интерфейсе.
 define gui.label_text_size = 24
@@ -80,7 +83,7 @@ define gui.label_text_size = 24
 define gui.notify_text_size = 16
 
 ## Размер заголовка игры.
-define gui.title_text_size = 50
+define gui.title_text_size = 54
 
 
 ## Главное и игровое меню. #####################################################
@@ -97,20 +100,15 @@ define gui.game_menu_background = "gui/game_menu.png"
 ## Высота текстового окна, содержащего диалог.
 define gui.textbox_height = 185
 
-## Местоположение текстового окна по вертикали экрана. 0.0 — верх, 0.5 — центр и
-## 1.0 — низ.
-define gui.textbox_yalign = 1.0
+## Местоположение текстового окна по вертикали экрана.
+define gui.textbox_yalign = 0.95
 
 
 ## Местоположение имени говорящего персонажа по отношению к текстовому окну.
-## Это могут быть целые значения в пикселях слева и сверху от начала окна или
-## процентное отношение, например, 0.5 для центрирования.
-define gui.name_xpos = 240
+define gui.name_xpos = 300
 define gui.name_ypos = 0
 
-## Горизонтальное выравнивание имени персонажа. Это может быть 0.0 для
-## левоориентированного, 0.5 для центрированного и 1.0 для правоориентированного
-## выравнивания.
+## Горизонтальное выравнивание имени персонажа.
 define gui.name_xalign = 0.0
 
 ## Ширина, высота и границы окна, содержащего имя персонажа или None, для
@@ -130,15 +128,13 @@ define gui.namebox_tile = False
 ## Размещение диалога по отношению к текстовому окну. Это могут быть целые
 ## значения в пикселях слева и сверху от текстового окна или процентное
 ## отношение, например, 0.5 для центрирования.
-define gui.dialogue_xpos = 268
-define gui.dialogue_ypos = 50
+define gui.dialogue_xpos = 300
+define gui.dialogue_ypos = 64
 
 ## Максимальная ширина текста диалога в пикселях.
-define gui.dialogue_width = 744
+define gui.dialogue_width = 760
 
-## Горизонтальное выравнивание текста диалога. Это может быть 0.0 для
-## левоориентированного, 0.5 для центрированного и 1.0 для правоориентированного
-## выравнивания.
+## Горизонтальное выравнивание текста диалога.
 define gui.dialogue_text_xalign = 0.0
 
 
@@ -199,7 +195,7 @@ define gui.quick_button_text_selected_color = gui.accent_color
 ## именованные переменные. Например, вы можете раскомментировать следующую
 ## строчку, чтобы установить ширину кнопок навигации.
 
-# define gui.navigation_button_width = 250
+define gui.navigation_button_width = 250
 
 
 ## Кнопки Выбора ###############################################################
@@ -250,7 +246,8 @@ define gui.file_slot_rows = 2
 
 ## Местоположение левого края навигационных кнопок по отношению к левому краю
 ## экрана.
-define gui.navigation_xpos = 40
+define gui.navigation_xpos = 120
+define gui.navigation_xalign = 0.2
 
 ## Вертикальная позиция индикатора пропуска.
 define gui.skip_ypos = 10
@@ -262,7 +259,7 @@ define gui.notify_ypos = 45
 define gui.choice_spacing = 22
 
 ## Кнопки в секции навигации главного и игрового меню.
-define gui.navigation_spacing = 4
+define gui.navigation_spacing = -3
 
 ## Контролирует интервал между настройками.
 define gui.pref_spacing = 10

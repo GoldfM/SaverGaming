@@ -24,7 +24,7 @@ init python:
     onn = ImageDissolve("eye.png", 0.9, 20, reverse=False) 
     off = ImageDissolve("eye.png", 0.7, 10, reverse=True) 
 label start:
-    play music "music/fiesta.mp3"
+    #play music "music/fiesta.mp3"
     image animated = Movie(play="wait.ogv", pos=(0,0), anchor=(0, 0))
     scene animated
     with Pause(1)
