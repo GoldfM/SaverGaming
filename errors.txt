@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 134: expected statement.
-    aplodisment
-               ^
+File "game/DragNDrop_game.rpy", line 42: expected statement.
+    game_checker = True
+                 ^
+
+File "game/DragNDrop_game.rpy", line 44: expected statement.
+    game_checker = False
+                 ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Nov  9 14:35:31 2022
+Mon Nov 21 04:39:51 2022
