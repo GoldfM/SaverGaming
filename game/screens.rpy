@@ -287,45 +287,50 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xalign 0.22
-        yalign 0.69
+        
 
         spacing gui.navigation_spacing
-
+        
         if main_menu:
-
+            xalign 0.22
+            yalign 0.69
             textbutton _("Начать") action Start()
+            textbutton _("Загрузить") action ShowMenu("load")
+            textbutton _("Настройки") action ShowMenu("preferences")
+            textbutton _("Об игре") action ShowMenu("about")
+            textbutton _("Помощь") action ShowMenu("help")
+            textbutton _("Выход") action Quit(confirm=not main_menu)
+
 
         else:
-
+            xalign 0.1
+            yalign 0.5
             textbutton _("История") action ShowMenu("history")
-
             textbutton _("Сохранить") action ShowMenu("save")
+            textbutton _("Загрузить") action ShowMenu("load")
+            textbutton _("Настройки") action ShowMenu("preferences")
+            textbutton _("Главное меню") action MainMenu()
+            textbutton _("Об игре") action ShowMenu("about")
+            textbutton _("Помощь") action ShowMenu("help")
+            textbutton _("Выход") action Quit(confirm=not main_menu)
 
-        textbutton _("Загрузить") action ShowMenu("load")
 
-        textbutton _("Настройки") action ShowMenu("preferences")
+
 
         if _in_replay:
 
             textbutton _("Завершить повтор") action EndReplay(confirm=True)
 
-        elif not main_menu:
 
-            textbutton _("Главное меню") action MainMenu()
-
-        textbutton _("Об игре") action ShowMenu("about")
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
+            pass
             ## Помощь не необходима и не относится к мобильным устройствам.
-            textbutton _("Помощь") action ShowMenu("help")
 
         if renpy.variant("pc"):
-
+            pass
             ## Кнопка выхода блокирована в iOS и не нужна на Android и в веб-
             ## версии.
-            textbutton _("Выход") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -682,11 +687,9 @@ style slot_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#preferences
 
 screen preferences():
-
+    
     tag menu
-
     use game_menu(_("Настройки"), scroll="viewport"):
-
         vbox:
 
             hbox:

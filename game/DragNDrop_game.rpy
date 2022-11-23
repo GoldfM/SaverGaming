@@ -39,10 +39,13 @@ label DragNDrop:
     
     if dictDND['situation1'] == 'triangle' and dictDND['situation2'] == 'square' and dictDND['situation3'] == 'circle':
         e "КРАСАВА"
+        $add_score=5
         $game_checker = True
     else:
+        $add_score=0
         $game_checker = False
         e "ПЛОХО"
+    $score = score + add_score
 
 screen drag_sample2:
     modal True
