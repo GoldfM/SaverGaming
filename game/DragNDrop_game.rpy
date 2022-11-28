@@ -37,21 +37,19 @@ label DragNDrop:
 
 
     
-    if dictDND['situation1'] == 'triangle' and dictDND['situation2'] == 'square' and dictDND['situation3'] == 'circle':
-        e "КРАСАВА"
+    if dictDND['situation1'] == 'song' and dictDND['situation2'] == 'dance' and dictDND['situation3'] == 'battle':
         $add_score=5
         $game_checker = True
     else:
         $add_score=0
         $game_checker = False
-        e "ПЛОХО"
     $score = score + add_score
 
 screen drag_sample2:
     modal True
     draggroup:
         drag:
-            drag_name "circle"
+            drag_name "battle"
             child "/images/DragNDrop/num1.png"
             xpos 0.1
             ypos 0.6
@@ -60,7 +58,7 @@ screen drag_sample2:
             dragged drag_place
             drag_raise True
         drag:
-            drag_name "triangle"
+            drag_name "song"
             child "/images/DragNDrop/num2.png"
             xpos 0.4
             ypos 0.6
@@ -69,7 +67,7 @@ screen drag_sample2:
             dragged drag_place
             drag_raise True
         drag:
-            drag_name "square"
+            drag_name "dance"
             child "/images/DragNDrop/num3.png"
             xpos 0.7
             ypos 0.6
@@ -81,38 +79,38 @@ screen drag_sample2:
             drag_name "situation1"
             xpos 0.1
             ypos 0.2
-            child "/images/DragNDrop/sit1.jpg"
+            child "/images/DragNDrop/song.jpg"
             draggable False
             droppable True
         drag:
             drag_name "situation2"
             xpos 0.4
             ypos 0.2
-            child "/images/DragNDrop/sit2.jpg"
+            child "/images/DragNDrop/dance.jpg"
             draggable False
             droppable True
         drag:
             drag_name "situation3"
             xpos 0.7
             ypos 0.2
-            child "/images/DragNDrop/sit3.jpg"
+            child "/images/DragNDrop/battle.jpg"
             draggable False
             droppable True
     imagebutton:
         xalign 0.1
         yalign 0.95
         idle "images/DragNDrop/btn1.png"
-        action Play('sound', '/audio/done_1.mp3')
+        action Play('sound', '/sounds/DragNDrop/battle.mp3')
     imagebutton:
         xalign 0.4
         yalign 0.95
         idle "images/DragNDrop/btn1.png"
-        action Play('sound', '/audio/done_1.mp3')
+        action Play('sound', '/sounds/DragNDrop/song.mp3')
     imagebutton:
         xalign 0.7
         yalign 0.95
         idle "images/DragNDrop/btn1.png"
-        action Play('sound', '/audio/done_1.mp3')
+        action Play('sound', '/sounds/DragNDrop/dance.mp3')
 
 screen drag_sample3:
     draggroup:

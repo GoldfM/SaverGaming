@@ -7,7 +7,7 @@ define gg = Character('Вы', color = "#00fff7")
 define artem = Character('Артем', color = "#dc3936", image = 'artem')
 define alice = Character('Алиса', color = "#dc36c3",image = 'alice')
 define pasha = Character('Паша', color = "#4736dc")
-define admin = Character('Администратоп', color = "#12a4ab")
+define admin = Character('Администратоп', color = "#12a4ab", image = 'receptionist')
 define adam = Character('Адам Качинский', color = "#12a4ab")
 define marcin = Character('Марцин Блаха', color = "#12a4ab")
 define mihal = Character('МИХАЛ', color = "#12a4ab")
@@ -81,7 +81,7 @@ label phone:
     menu:
         artem "Доброе утро [name_], ты ведь не забыл какой сегодня день?"
         "Ой, кажется забыл, можешь напомнить?":
-            artem "Хватит дурачится, за еду за тобой через час, отправимся в институт, будь готов"
+            artem @ annoyed"Хватит дурачится, за еду за тобой через час, отправимся в институт, будь готов"
             "*сбросил трубку*"
             gg "И как в сообществе преданных игровых гиков оказался такой душнила..."
         "Конечно, как о таком забыть?":
@@ -100,7 +100,7 @@ label road_to_Institute:
     menu:
         artem "Сегодня великий день, наша команда шла к этому долгое время, будущее компьютерных игр зависит только от тебя."
         "Да, да, да. А спалось как?":
-            artem "Зря тебе доверили такую ответственную роль, ты слишком не серьезен. Скажи спасибо, что Алиса настояла на твоей кандидатуре."
+            artem @ annoyed "Зря тебе доверили такую ответственную роль, ты слишком не серьезен. Скажи спасибо, что Алиса настояла на твоей кандидатуре."
             gg "И я тебя люблю"
         "Не переживай, я не подведу":
             artem "Надеюсь.."
@@ -192,6 +192,9 @@ label end_prepare:
     alice "Положи руки на подлокотники и закрой глаза."
     alice "Все, хорошего путешествия! Не подведи нас!"
     scene black with off
+    image animated2 = Movie(play="time_lapse.ogv", pos=(0,0), anchor=(0, 0))
+    scene animated2
+    with Pause(7)
     jump start_travel
 
 label start_travel:
@@ -205,6 +208,7 @@ label start_travel:
             alice"Отлично"
     alice"Заходи внутрь"
     scene office with fade
+    show receptionist at right
     admin "День добрый, молодой человек, вы к кому?"
     gg "Я студент, у меня сегодня назначена небольшая экскурсия"
     menu:
@@ -238,17 +242,17 @@ label talk_with_adam:
         "Желание разбогатеть":
             $add_score = 0
             $score = score + add_score
-            $renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
+            #$renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
             adam "Деньги - это хорошо, но на одном желании разбогатеть далеко не уйдешь... Успех в игровой индустрии напрямую зависит от того, насколько ты любишь то, что ты делаешь."
         "Любовь к играм":
             $add_score = 5
             $score = score + add_score
-            $renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
+            #$renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
             adam "Да, многие  фанаты игровой культуры приходят работать эту сферу. Но нужно учесть, что процесс разработки игр сильно отличается от прохождения готовых продуктов. Это тяжелый труд, который не всем приходится по вкусу."
         "Желание создать собственную студию, чьи проекты покорят людей по всему миру":
             $add_score = 10
             $score = score + add_score
-            $renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
+            #$renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
             adam "Хороший ответ, надеюсь, у вас все получится. Сегодня наша сфера нуждается в толковых специалистах."
     if add_score>0:
         alice "Ты же понимаешь, что в зависимости от твоих действий будет определяться успех нашего проекта?"
@@ -266,24 +270,24 @@ label game_design:
         "Приятно познакомиться, я Феликс Вуйчик":
             $add_score = 5
             $score = score + add_score
-            $renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
+            #$renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
             pass
         "Упасть на колени и боготворить его":
             $add_score = 0
             $score = score + add_score
-            $renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
+            #$renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
             "На вас посмотрели как на сумасшедшего и подняли на ноги"
         "Очень приятно, для меня это огромная честь общаться с человеком, который написал сценарий к культовому Ведьмаку 3.":
             $add_score = 0
             $score = score + add_score
-            $renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
+            #$renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
             marcin "Спасибо большое, я польщен. Но вы что-то путаете, я только работаю над ним"
             "Неловкое молчание..."
             alice @ facepalm "Баран"
         "И что? А я Феликс Вуйчик":
             $add_score = 0
             $score = score + add_score
-            $renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
+            #$renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
             marcin "Кхм. Приятно познакомиться, Феликс Вуйчик"
 
     marcin "Давайте начнем экскурсию в мир разработки игр"
@@ -301,7 +305,8 @@ label game_design:
     $game_checker = False
     
     call DragNDrop from _call_DragNDrop
-    $ renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
+    stop sound
+    #$ renpy.notify(f"Количество ваших очков: {score} (+{add_score})")
     if game_checker:
         marcin"Да у тебя талант парень!"
     else:
