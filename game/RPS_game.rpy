@@ -81,7 +81,7 @@ label start_game:
         jump to_end
 
 label to_end:
-    if points >14:
+    if points > 14:
         jump sucess
     else:
         jump failed
@@ -97,8 +97,8 @@ label knb_play:
 
 label sucess:
     scene ai
-    e 'Поздравляю, вы обучили машину, теперь он непобедим, хотите проверить его силы?'
-    jump start
+    $add_score = 10
+    $score = score + add_score
     #ДОДЕЛАТЬ ЭТУ ХУЙНЮ
     return
 
@@ -109,5 +109,4 @@ label failed:
     $ points = 0
     $ num_game = 0
     e 'Лошара. ты слил'
-    jump knb_play
     return

@@ -1,7 +1,6 @@
 ﻿# Вы можете расположить сценарий своей игры в этом файле.
 
 # Определение персонажей игры.
-define e = Character('Эйлин', color="#25ff25")
 define AIHome = Character('Умный дом', color = "#ff6600", image = 'robot')
 define gg = Character('Вы', color = "#00fff7")
 define artem = Character('Артем', color = "#dc3936", image = 'artem')
@@ -11,6 +10,13 @@ define admin = Character('Администратоп', color = "#12a4ab", image 
 define adam = Character('Адам Качинский', color = "#12a4ab")
 define marcin = Character('Марцин Блаха', color = "#12a4ab")
 define mihal = Character('МИХАЛ', color = "#12a4ab")
+define marcey = Character('Марцей', color = "#12a4ab")
+define showman = Character('Ведущий', color = "#12a4ab")
+define vanya = Character('Ваня', color = "#12a4ab")
+
+
+
+
 
 
 
@@ -378,4 +384,231 @@ label questions_mihal:
     jump questions_mihal
 
 label game_development:
-    "....."
+    gg "День добрый, есть кто?"
+    marcey "О, да, привет! Ты наверное тот студент, о котором меня предупреждали. Я Мацей Синило, можно сказать, главный прогер компании, работал над вторым и первым Ведьмаком"
+    gg "Приятно познакомиться, Марцей!"
+    marcey "Что же работы много, так что не будем затягивать, начнем нашу экскурсию"
+    marcey "Садись рядом, покажу тебе наши наработки"
+    marcey "Чем вообще занимается разработчик при создании игры?"
+    marcey "Когда готов сюжет и визуальная составляющая игры, настаёт время кода. Программисты в игровой индустрии по своей сути занимаются внедрением всех наработок художников, геймдизайнеров, музыкантов."
+    marcey "Для работы в этом отделе необходимы знания языков, которые используются при создании игры. Сразу скажу, что без знаний по математике и алгоритмике в сферу разработки лучше не лезть"
+    marcey "В первую очередь выбирается или создается с нуля игровой движок, на котором будет работать проект. Игровой движок - базовое программное обеспечение компьютерной игры."
+    marcey "Говоря грубо, игровой движок — это какой-то инструментарий, упрощающий разработку игры и дающий ей кроссплатформенность. Движок определяет физику игры, анимации героев, оптимизацию, от части графику."
+    marcey "Сейчас для создания третьего  Ведьмака мы разработали собственный игровой движок - REDengine 3. Кстати, написан он на C++"
+    marcey "Затем прописывается искусственный интеллект игры. Программист ИИ может программировать систему поиска пути, стратегии и тактики противника."
+    marcey "Это особенно важно в стратегических играх. Данная сфера довольна сложна, она тесна связана не только с программированием, но и с математикой и теорией алгоритмов."
+    menu:
+        marcey "Кстати, у нас есть небольшой тренажер для разработчиков в сфере искусственного интеллекта, хочешь попробовать свои силы?"
+        "С удовольствием":
+            pass
+        "Не рискну":
+            alice annoyed "Ты что обалдел? Пробуй давай, нельзя упускать такую возможность"
+            gg "Хотя, когда еще выпадет такая возможность? Надо пробовать"
+    call RPS_game
+    marcey "Еще разработчики занимаются синхронизацией звука с персонажами, действиями, событиями. (выстрел из пистолета, удар грома, музыкальный фон). Также мы распределяем звуки по коллекциям, изменяем звуковую параметрию, занимаемся сведением звуков."
+    marcey "Я же являюсь ведущим программистом. Я ответственен за всю кодовую составляющую игры. Моя работа заключается в том, чтобы убедиться, что различные подмодули игры реализованы должным образом, я слежу за развитием событий с точки зрения программирования."
+    marcey "Чтобы стать таким специалистом, нужно несколько лет проработать в игровой индустрии. Несмотря на свою должность, ведущий программист имеет меньше времени на написание кода, так как в его обязанности входит проведение собраний и контроль деятельности других программистов."
+    marcey "Наша экскурсия подошла к концу. Могу ответить на твои вопросы, если они есть, но не долго, время - деньги"
+    jump questions_marcey
+
+label questions_marcey:
+    menu:
+        marcey "Какие у тебя есть вопросы?"
+        "Может, у вас есть какой-нибудь совет для начинающих разработчиков?":
+            marcey "Учиться. Смотреть обучающие видео, записываться на курсы, поступить в университет на программиста. Мне кажется, это единственный путь к успеху"
+        "Сколько в среднем зарабатывает разработчик игр за месяц?":
+            marcey "Тяжело сказать, ну, в среднем около 1800 долларов"
+            gg "*Про себя* Примерно 100000 рублей, неплохо, неплохо..."
+        "Не буду отвлекать, спасибо огромное, что уделили время, всего хорошего!":
+            marcey "Успехов"
+            jump end_travel
+    jump questions_marcey
+
+label end_travel:
+    alice "Молодец, задача выполнена. Пора назад в будущее, ты готов?"
+    gg "Поехали"
+    alice "Перемещение через 3... {w=1}2... {w=1}1..."
+    image animated2 = Movie(play="time_lapse.ogv", pos=(0,0), anchor=(0, 0))
+    scene animated2
+    with Pause(7)
+    jump back_to_the_future
+
+
+   
+style uuu:
+    size 30
+    xalign 0.3
+    yalign 0.1
+    xsize 600
+    ysize 200
+
+    color "#e60aff"
+    background "#ff0b0b"
+
+
+screen test:
+    text _("За разработку идей, фишек, механик игры отвечает...") style 'uuu'
+    textbutton _("Дизайнер") action [Hide('aue'), Call('no_adder')] xalign 0.2 yalign 0.30 background 
+    textbutton _("Гейм-дизайнер") action [Hide('aue'), Call('adder')] xalign 0.2 yalign 0.45 background "#a12a64"
+    textbutton _("Программист") action [Hide('aue'), Call('no_adder')] xalign 0.2 yalign 0.60 background
+    textbutton _("Ресепшеонист") action [Hide('aue'), Call('no_adder')] xalign 0.2 yalign 0.75 background 
+screen test1:
+    text _("Какие качества необходимы для работы гейм-дизайнером?") style 'uuu'
+    textbutton _("Сила воли, пацифизм") action [Hide('aue1'), Call('no_adder')] xalign 0.2 yalign 0.30
+    textbutton _("Креативность, грамотность") action [Hide('aue1'), Call('adder')] xalign 0.2 yalign 0.45 background "#a12a64"
+    textbutton _("Юмор, манерность") action [Hide('aue1'), Call('no_adder')] xalign 0.2 yalign 0.60
+    textbutton _("Коллаборационизм, коммунизм") action [Hide('aue1'), Call('no_adder')] xalign 0.2 yalign 0.75
+
+screen test2:
+    text _("За какие аспекты игры отвечает графический дизайнер?") style 'uuu'
+    textbutton _("Тестирование, исправление багов") action [Hide('aue2'), Call('no_adder')] xalign 0.2 yalign 0.30
+    textbutton _("Музыку пишет, типо рэпер") action [Hide('aue2'), Call('no_adder')] xalign 0.2 yalign 0.45
+    textbutton _("Написание сюжета, создание баланса") action [Hide('aue2'), Call('no_adder')] xalign 0.2 yalign 0.60
+    textbutton _("Создание текстур, прорисовка персонажей") action [Hide('aue2'), Call('adder')] xalign 0.2 yalign 0.75 background "#a12a64"
+
+screen test3:
+    text _("Какими навыками/знаниями должен обладать разработчик (программист)?") style 'uuu'
+    textbutton _("Азы математики, знание языков программирования") action [Hide('aue3'), Call('adder')] xalign 0.2 yalign 0.30 background "#a12a64"
+    textbutton _("Высшее образование, числа Фибоначчи") action [Hide('aue3'), Call('no_adder')] xalign 0.2 yalign 0.45
+    textbutton _("Слепая печать, логика") action [Hide('aue3'), Call('no_adder')] xalign 0.2 yalign 0.60
+    textbutton _("Должен знать аккорды песни 'Моя оборона' и число Pi до 12 цифры после запятой") action [Hide('aue3'), Call('no_adder')] xalign 0.2 yalign 0.75
+
+screen test4:
+    text _("Кто занимается сведением музыки в игре?") style 'uuu'
+    textbutton _("Гейм-дизайнер") action [Hide('aue4'), Call('no_adder')] xalign 0.2 yalign 0.30
+    textbutton _("Разработчик") action [Hide('aue4'),Call('adder')] xalign 0.2 yalign 0.45 background "#a12a64"
+    textbutton _("Дизайнер") action [Hide('aue4'), Call('no_adder')] xalign 0.2 yalign 0.60
+    textbutton _("Композитор") action [Hide('aue4'), Call('no_adder')] xalign 0.2 yalign 0.75
+
+screen test5:
+    text _("Кто отвечает за освещение в игре?") style 'uuu'
+    textbutton _("Электрик") action [Hide('aue5'), Call('no_adder')] xalign 0.2 yalign 0.30
+    textbutton _("Дизайнер") action [Hide('aue5'),Call('no_adder')] xalign 0.2 yalign 0.45
+    textbutton _("Разработчик") action [Hide('aue5'), Call('adder')] xalign 0.2 yalign 0.60 background "#a12a64"
+    textbutton _("Гейм-дизайнер") action [Hide('aue5'), Call('no_adder')] xalign 0.2 yalign 0.75
+
+screen test6:
+    text _("Выберете правильную цепочку") style 'uuu'
+    textbutton _("Модель персонажа => Концепт арт => Анимация персонажа") action [Hide('aue6'), Call('no_adder')] xalign 0.2 yalign 0.30
+    textbutton _("Концепт арт => Анимация персонажа => Модель персонажа") action [Hide('aue6'),Call('no_adder')] xalign 0.2 yalign 0.45
+    textbutton _("Концепт арт => Модель персонажа => Анимация персонажа") action [Hide('aue6'), Call('adder')] xalign 0.2 yalign 0.60 background "#a12a64"
+    textbutton _("Анимация персонажа => Концепт арт => Модель персонажа") action [Hide('aue6'), Call('no_adder')] xalign 0.2 yalign 0.75
+
+screen test7:
+    text _("Что такое игровой движок?") style 'uuu'
+    textbutton _("Ну типо как у машины, шоб на экране что-то двигалось") action [Hide('aue7'), Call('no_adder')] xalign 0.2 yalign 0.30
+    textbutton _("Инструментарий, упрощающий разработку игры и дающий ей кроссплатформенность") action [Hide('aue7'),Call('adder')] xalign 0.2 yalign 0.45 background "#a12a64"
+    textbutton _("Язык программирования") action [Hide('aue7'), Call('no_adder')] xalign 0.2 yalign 0.60
+    textbutton _("Инструмент для создания 3D моделей") action [Hide('aue7'), Call('no_adder')] xalign 0.2 yalign 0.75
+
+
+label adder:
+    $score = score + 5
+    return
+
+label no_adder:
+    $score = score + 0
+    return
+screen aue:
+    modal True
+    use test
+screen aue1:
+    modal True
+    use test1
+screen aue2:
+    modal True
+    use test2
+screen aue3:
+    modal True
+    use test3
+screen aue4:
+    modal True
+    use test4
+screen aue5:
+    modal True
+    use test5
+screen aue6:
+    modal True
+    use test6
+screen aue7:
+    modal True
+    use test7
+
+
+    
+label back_to_the_future:
+    scene officeout with fade
+
+    gg "Бе.. Отвратительное чувство"
+    alice "Все почти позади, осталось только записать полученный материал"
+    gg "Опять работа... Что надо делать?"
+    alice "Запиши, что ты узнал на этот компьютер, пароль на листочке. Я пока пойду заполню рапорт"
+    show screen aue
+    scene computer meele
+    pause
+    show screen aue1
+    scene computer meele
+    pause
+    show screen aue2
+    scene computer meele
+    pause
+    show screen aue3
+    scene computer meele
+    pause
+    show screen aue4
+    scene computer meele
+    pause
+    show screen aue5
+    scene computer meele
+    pause
+    show screen aue6
+    scene computer meele
+    pause
+    show screen aue7
+    scene computer meele
+    pause
+    scene black
+    alice "О, ты уже закончил! Отлично, теперь все в наших руках, можно приступать к созданию игры"
+    $score = score - 60
+    "Спустя 8 лет..."
+    if score > 49:
+        jump good_end
+    else:
+        jump bad_end
+    "хуй1"
+
+label good_end:
+    alice "Включай стрим скорее, сейчас начнется"
+    alice "Подумать только Паша гость Late Night Show, это победа!"
+    gg "Да включаю я, включаю"
+    showman " Сегодня у нас в программе глава новой студии игр 'Pheonix', чья новая игра покорила сердца миллионов человек по всему миру и перевернула современную индустрию развлечений"
+    showman "Сейчас Павел расскажет, как команде студентов удалось возродить казалось бы мертвый жанр видео-игр."
+    play sound aplodisment
+    showman "Добрый вечер Павел, ваша игра произвела настоящий фурор, сколько копий вы продали?"
+    stop sound
+    pasha "Добрый вечер, если не ошибаюсь наш тираж превысил 200 млн копий"
+    showman "200 млн!? Это невероятный результат, скажите как вам это удалось?"
+    pasha "Наша команда проделала долгий и тяжелый путь, при создании нашей игры мы изучали успешные проекты прошлого, пытались создать свой оригинальный проект, переняв опыт предшественников"
+    pasha "Мне кажется нам это удалось."
+    showman "Безусловно Павел, безусловно. После вашего успеха многие люди хотят повторить ваш успех, что вы можете им посоветовать?"
+    pasha "Ну это зависит какую роль при разработки игры вы хотите играть, так, например, если вы хотите стать программистом в команде разработчиков, наверное вам стоит получить IT образование"
+    pasha "Допустим, почти все наши разработчики - учились на специальности Программная инженерия в Уральском федеральном университете, так что выбирайте вуз, сдавайте экзамены, поступайте и обучайтесь"
+    pasha "Кто знает может следующий прорыв в игровой индустрии совершите именно вы!"
+    "КОНЕЦ ХУЛИ"
+
+
+label bad_end:
+    "Ха, лох, ты проебаааал. Куда тебе на гейм-разработчика, иди полы мой, или вот твоя судьба:"
+    vanya "[name_], две картошки и Биг Мак"
+    gg "Будет сделано..."
+    "Через два часа..."
+    vanya "Еще один день на работе мечты, а ведь я международник по образованию, УГИ закончил..."
+    vanya "Кстати, а ты на кого учился?"
+    gg "На программиста"
+    vanya "Реально? Как ты дошел до фастфуда, программисты ведь востребованная профессия?"
+    gg "Мы с командой разрабатывали проект, пытались выпустить первую за долгое время успешную игру."
+    gg "Все вроде шло хорошо, у нас были спонсоры, энтузиазм, команда, но опыта в этой сфере у нас не хватило, проект буквально разваливался. Работники разбегались кто-куда, спонсоры прекратили финансирование и вот я здесь"
+    gg "Я играл довольно таки важную роль в команде, так что во многом это мой провал."
+    gg "Если бы я мог вернуться в прошлое и попробовать что-то изменить... Но увы, имеем, что имеем"
+    vanya "Грустная история, ладно пора домой, спокойной ночи"
+    gg "Спокойной.."

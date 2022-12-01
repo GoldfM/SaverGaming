@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 692: 'navigation' is not a keyword argument or valid child for the screen statement.
-    navigation xalign 0.0
-              ^
+File "game/script.rpy", line 583: end of line expected.
+    showman " Сегодня у нас в программе глава новой студии игр "Pheonix", чья новая игра покорила сердца миллионов человек по всему миру и перевернула современную индустрию развлечений"
+                                                                ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Nov 21 14:31:43 2022
+Thu Dec  1 20:05:30 2022
