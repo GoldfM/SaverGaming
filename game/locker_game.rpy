@@ -24,7 +24,7 @@ screen safe_code:
     add "images/safe_i/cl_%s.png"%(numbr) xalign .52 yalign .51 zoom 1.2
     imagebutton auto "images/safe_i/dwn_%s.png" focus_mask True xalign .517 yalign .668 action If(numbr > 0, SetVariable("numbr", numbr - 1), SetVariable("numbr", 9))
 
-    imagebutton auto "images/safe_i/enter_btn_%s.png" focus_mask True yalign .61 xalign .691 action If(numbl == 7, If(numbc == 7, If(numbr == 7, Jump("start"), Show("access_denied")), Show("access_denied")), Show("access_denied"))
+    imagebutton auto "images/safe_i/enter_btn_%s.png" focus_mask True yalign .61 xalign .691 action If(numbl == 7, If(numbc == 1, If(numbr == 5, Jump("test"), Show("access_denied")), Show("access_denied")), Show("access_denied"))
 
 
 screen access_denied:

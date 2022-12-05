@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 583: end of line expected.
-    showman " Сегодня у нас в программе глава новой студии игр "Pheonix", чья новая игра покорила сердца миллионов человек по всему миру и перевернула современную индустрию развлечений"
-                                                                ^
+File "game/script.rpy", line 488: Say menuitems and captions may not exist in the same menu.
+    "Должен знать аккорды песни "Моя оборона" и число Pi до 12 цифры после запятой":
+                                                                                   ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Thu Dec  1 20:05:30 2022
+Sat Dec  3 14:44:24 2022

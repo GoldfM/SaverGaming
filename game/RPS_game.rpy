@@ -96,17 +96,17 @@ label knb_play:
     pause
 
 label sucess:
-    scene ai
     $add_score = 10
     $score = score + add_score
-    #ДОДЕЛАТЬ ЭТУ ХУЙНЮ
+    scene computer office intellect
+    marcey "Ты отлично справился, тренажер конечно сильно отличается от реальности, но все же ты показал достойный результат"
     return
 
 label failed:
-    scene ai
     $ p_choise = 0
     $ enemy_ch = ""
+    scene computer office intellect
+    marcey "Не расстраивайся, у тебя все еще впереди"
     $ points = 0
     $ num_game = 0
-    e 'Лошара. ты слил'
     return
