@@ -5,14 +5,14 @@ define AIHome = Character('Умный дом', color = "#0000ff", image = 'robot
 define gg = Character('Вы', color = "#00fff7")
 define artem = Character('Артем', color = "#aefe00", image = 'artem')
 define alice = Character('Алиса', color = "#aa1393",image = 'alice')
-define pasha = Character('Паша', color = "#4736dc")
-define admin = Character('Администратоп', color = "#12a4ab", image = 'receptionist')
-define adam = Character('Адам Качинский', color = "#12a4ab", image = 'adam')
-define marcin = Character('Марцин Блаха', color = "#12a4ab")
-define mihal = Character('МИХАЛ', color = "#12a4ab")
-define marcey = Character('Марцей', color = "#12a4ab")
-define showman = Character('Ведущий', color = "#12a4ab")
-define vanya = Character('Ваня', color = "#12a4ab")
+define pasha = Character('Паша', color = "#fff700")
+define admin = Character('Администратоп', color = "#10c7d0", image = 'receptionist')
+define adam = Character('Адам Качинский', color = "#10c7d0", image = 'adam')
+define marcin = Character('Марцин Блаха', color = "#10c7d0")
+define mihal = Character('МИХАЛ', color = "#10c7d0")
+define marcey = Character('Марцей', color = "#10c7d0")
+define showman = Character('Ведущий', color = "#10c7d0")
+define vanya = Character('Ваня', color = "#10c7d0")
 
 
 
@@ -431,7 +431,7 @@ label game_development:
         "Не рискну":
             alice annoyed "Ты что обалдел? Пробуй давай, нельзя упускать такую возможность"
             gg "Хотя, когда еще выпадет такая возможность? Надо пробовать"
-    call RPS_game
+    call RPS_game from _call_RPS_game
     scene computer office sound_
     marcey "Еще разработчики занимаются синхронизацией звука с персонажами, действиями, событиями. (выстрел из пистолета, удар грома, музыкальный фон). Также мы распределяем звуки по коллекциям, изменяем звуковую параметрию, занимаемся сведением звуков."
     marcey "Я же являюсь ведущим программистом. Я ответственен за всю кодовую составляющую игры. Моя работа заключается в том, чтобы убедиться, что различные подмодули игры реализованы должным образом, я слежу за развитием событий с точки зрения программирования."
@@ -559,18 +559,27 @@ label test:
             pass
     alice "О, ты уже закончил! Отлично, теперь все в наших руках, можно приступать к созданию игры"
     scene black with fade
-    #$score = score - 60
     "Спустя 8 лет..."
+    
+    menu:
+        "Выберите концовку (в проде такого не будет)"
+        "Хорошая":
+            $score = score + 60
+        "Плохая":
+            $score = score - 60
+
+
     if score > 44:
         jump good_end
     else:
         jump bad_end
 
 label good_end:
-    scene institut inside two with fade
+    scene institut inside_two with fade
     alice "Включай стрим скорее, сейчас начнется"
     alice "Подумать только Паша гость Late Night Show, это победа!"
     gg "Да включаю я, включаю"
+    scene conference
     showman " Сегодня у нас в программе глава новой студии игр 'Pheonix', чья новая игра покорила сердца миллионов человек по всему миру и перевернула современную индустрию развлечений"
     showman "Сейчас Павел расскажет, как команде студентов удалось возродить казалось бы мертвый жанр видео-игр."
     play sound aplodisment
@@ -587,9 +596,11 @@ label good_end:
 
 
 label bad_end:
+    scene macdac with fade
     vanya "[name_], две картошки и Биг Мак"
     gg "Будет сделано..."
-    "Через два часа..."
+    scene macdac outside with fade
+    "Через два часа..." 
     vanya "Еще один день на работе мечты, а ведь я международник по образованию, УГИ закончил..."
     vanya "Кстати, а ты на кого учился?"
     gg "На программиста"

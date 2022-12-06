@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 424, in script
-    scene computer office AI
-Exception: Image 'computer office' does not accept attributes 'AI'.
+  File "game/script.rpy", line 571, in script
+    scene institut inside two with fade
+Exception: Image 'institut inside' does not accept attributes 'two'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 424, in script
-    scene computer office AI
+  File "game/script.rpy", line 571, in script
+    scene institut inside two with fade
   File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1542, in execute
     show_imspec(self.imspec, atl=getattr(self, "atl", None))
   File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1371, in show_imspec
@@ -22,9 +22,9 @@ Full traceback:
     args.extraneous()
   File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 265, in extraneous
     raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'computer office' does not accept attributes 'AI'.
+Exception: Image 'institut inside' does not accept attributes 'two'.
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 SaveGameIndustry 1.0
-Mon Dec  5 17:01:35 2022
+Tue Dec  6 10:48:45 2022
