@@ -2,9 +2,13 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 488: Say menuitems and captions may not exist in the same menu.
-    "Должен знать аккорды песни "Моя оборона" и число Pi до 12 цифры после запятой":
-                                                                                   ^
+File "game/script.rpy", line 202: play requires a file
+    play travel
+               ^
+
+File "game/script.rpy", line 592: play requires a file
+    play happy
+              ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sat Dec  3 14:44:24 2022
+Tue Dec 20 16:48:54 2022

@@ -1,30 +1,26 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 571, in script
-    scene institut inside two with fade
-Exception: Image 'institut inside' does not accept attributes 'two'.
+  File "game/script.rpy", line 315, in script call
+    call DragNDrop from _call_DragNDrop
+  File "game/DragNDrop_game.rpy", line 35, in script
+    instruct 'Ты должен прослушать аудиозаписи снизу, а затем соотнести каждую из них с сценой, наиболее подходяще для ее использования.\nПеретащи кружок с номером, соответствующим номером аудиозаписи на картинку из сцены, которая наиболее подходит для данной мелодии'
+Exception: Sayer 'instruct' is not defined.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 571, in script
-    scene institut inside two with fade
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1542, in execute
-    show_imspec(self.imspec, atl=getattr(self, "atl", None))
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 1371, in show_imspec
-    renpy.config.show(name,
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\exports.py", line 686, in show
-    if not base.find_target() and renpy.config.missing_show:
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\image.py", line 414, in find_target
-    self.target = target._duplicate(a)
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 397, in _duplicate
-    args.extraneous()
-  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\display\core.py", line 265, in extraneous
-    raise Exception("Image '{}' does not accept attributes '{}'.".format(
-Exception: Image 'institut inside' does not accept attributes 'two'.
+  File "game/script.rpy", line 315, in script call
+    call DragNDrop from _call_DragNDrop
+  File "game/DragNDrop_game.rpy", line 35, in script
+    instruct 'Ты должен прослушать аудиозаписи снизу, а затем соотнести каждую из них с сценой, наиболее подходяще для ее использования.\nПеретащи кружок с номером, соответствующим номером аудиозаписи на картинку из сцены, которая наиболее подходит для данной мелодии'
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 881, in execute
+    who = eval_who(self.who, self.who_fast)
+  File "C:\Users\admin\Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 774, in eval_who
+    raise Exception("Sayer '%s' is not defined." % who)
+Exception: Sayer 'instruct' is not defined.
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 SaveGameIndustry 1.0
-Tue Dec  6 10:48:45 2022
+Tue Dec 20 16:39:41 2022

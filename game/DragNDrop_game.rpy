@@ -3,7 +3,6 @@
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 
-define e = Character("")
 
 init python:
     count_adds = 0
@@ -33,6 +32,10 @@ label DragNDrop:
     # This shows a character sprite. A placeholder is used, but you can
     # replace it by adding a file named "eileen happy.png" to the images
     scene tech
+    define instruct = Character(None, kind=nvl, color="#c8c8ff")
+
+    "Ты должен прослушать аудиозаписи снизу, а затем соотнести каждую из них со сценой, наиболее подходящей для ее использования"
+    "Перетащи кружок с номером, соответствующим номером аудиозаписи на картинку из сцены, которая наиболее подходит для данной мелодии"
     call screen drag_sample2
 
 
