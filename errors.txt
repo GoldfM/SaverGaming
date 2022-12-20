@@ -2,13 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 202: play requires a file
-    play travel
-               ^
-
-File "game/script.rpy", line 592: play requires a file
-    play happy
-              ^
+File "game/script.rpy", line 641: expected statement.
+    wait()
+          ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Dec 20 16:48:54 2022
+Tue Dec 20 22:12:57 2022

@@ -637,15 +637,10 @@ label bad_end:
     jump endGame
 
 label endGame:
+    scene end1
+    with Pause(2)
+    scene end2
+    with Pause(2)
     scene black with fade
-    define config.nvl_list_length = 20
-    define instruct = Character(None, kind=nvl, color="#c8c8ff")
-    instruct ' \n\nСпасибо за то, что прошли нашу игру\n
-    Мы надеемся что она была для вас интересна и познавательна\n\n
-    Вы познакомились с такими передовыми профессиями как:\n
-     - Гейм-дизайнер \n
-     - Дизайнер \n
-     - Разработчик\n\n
-     Узнали подробности...\n
-     Наша команда ..\n
-     Конец'
+    with Pause(2)
+
